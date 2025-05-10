@@ -3,10 +3,16 @@ import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "@/context/CartContext";
 
 const ProgramCards = () => {
+  const navigate = useNavigate();
+  const { setSelectedProgram } = useCart();
+  
   const programs = [
     {
+      id: "essential",
       title: "Essential Plan",
       price: "$49",
       period: "per month",
@@ -20,6 +26,7 @@ const ProgramCards = () => {
       popular: false,
     },
     {
+      id: "premium",
       title: "Premium Plan",
       price: "$99",
       period: "per month",
@@ -34,6 +41,7 @@ const ProgramCards = () => {
       popular: true,
     },
     {
+      id: "ultimate",
       title: "Ultimate Plan",
       price: "$199",
       period: "per month",
@@ -49,6 +57,11 @@ const ProgramCards = () => {
     }
   ];
 
+  const handleProgramSelect = (program) => {
+    setSelectedProgram(program);
+    navigate("/checkout");
+  };
+
   return (
     <section id="programs" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
@@ -62,7 +75,7 @@ const ProgramCards = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {programs.map((program) => (
             <Card 
-              key={program.title} 
+              key={program.id} 
               className={`relative flex flex-col ${program.popular ? 'border-teal-500 shadow-lg' : 'border-gray-200'}`}
             >
               {program.popular && (
@@ -101,6 +114,7 @@ const ProgramCards = () => {
                       ? 'bg-teal-600 hover:bg-teal-700' 
                       : 'border-teal-600 text-teal-600 hover:bg-teal-50'
                   }`}
+                  onClick={() => handleProgramSelect(program)}
                 >
                   Get Started Now
                 </Button>
