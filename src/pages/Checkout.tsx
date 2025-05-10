@@ -71,8 +71,8 @@ const Checkout = () => {
     // Basic validation
     if (!cardName || cardNumber.replace(/\s/g, "").length < 16 || cardExpiry.length < 5 || cardCvc.length < 3) {
       toast({
-        title: "Invalid card details",
-        description: "Please check your card information and try again.",
+        title: "Dados de cartão inválidos",
+        description: "Por favor, verifique suas informações e tente novamente.",
         variant: "destructive"
       });
       return;
@@ -87,8 +87,8 @@ const Checkout = () => {
       
       // Show success message
       toast({
-        title: "Payment successful!",
-        description: `Thank you for purchasing the ${selectedProgram?.title}!`,
+        title: "Pagamento realizado com sucesso!",
+        description: `Obrigado por adquirir o ${selectedProgram?.title}!`,
         variant: "default",
       });
       
@@ -111,9 +111,9 @@ const Checkout = () => {
         <main className="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <Card className="w-full max-w-md mx-auto">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl font-bold text-green-600">Payment Successful!</CardTitle>
+              <CardTitle className="text-2xl font-bold text-green-600">Pagamento Realizado com Sucesso!</CardTitle>
               <CardDescription>
-                Thank you for your purchase
+                Obrigado pela sua compra
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4 text-center">
@@ -123,13 +123,13 @@ const Checkout = () => {
               <p className="text-lg font-medium">{selectedProgram.title}</p>
               <p className="text-2xl font-bold">{selectedProgram.price}</p>
               <p className="text-gray-500">
-                We've sent a receipt to {user?.email || "your email address"}
+                Enviamos o recibo para {user?.email || "seu endereço de email"}
               </p>
               <Button 
                 className="mt-6 w-full bg-teal-600 hover:bg-teal-700"
                 onClick={() => navigate("/")}
               >
-                Return to Home
+                Voltar para a Página Inicial
               </Button>
             </CardContent>
           </Card>
@@ -150,7 +150,7 @@ const Checkout = () => {
               className="mb-4 flex items-center text-gray-500"
               onClick={() => navigate("/#programs")}
             >
-              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Programs
+              <ArrowLeft className="mr-2 h-4 w-4" /> Voltar aos Programas
             </Button>
             <h1 className="text-3xl font-bold">Checkout</h1>
           </div>
@@ -160,19 +160,19 @@ const Checkout = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <CreditCard className="mr-2 h-5 w-5" /> Payment Details
+                    <CreditCard className="mr-2 h-5 w-5" /> Detalhes do Pagamento
                   </CardTitle>
                   <CardDescription>
-                    Enter your card information to complete your purchase
+                    Insira os dados do seu cartão para concluir sua compra
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="space-y-2">
-                      <Label htmlFor="cardName">Cardholder Name</Label>
+                      <Label htmlFor="cardName">Nome no Cartão</Label>
                       <Input 
                         id="cardName" 
-                        placeholder="John Smith" 
+                        placeholder="João Silva" 
                         value={cardName}
                         onChange={(e) => setCardName(e.target.value)}
                         required
@@ -180,7 +180,7 @@ const Checkout = () => {
                     </div>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="cardNumber">Card Number</Label>
+                      <Label htmlFor="cardNumber">Número do Cartão</Label>
                       <Input 
                         id="cardNumber" 
                         placeholder="1234 5678 9012 3456"
@@ -192,17 +192,17 @@ const Checkout = () => {
                     
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="cardExpiry">Expiration Date</Label>
+                        <Label htmlFor="cardExpiry">Data de Validade</Label>
                         <Input 
                           id="cardExpiry" 
-                          placeholder="MM/YY"
+                          placeholder="MM/AA"
                           value={cardExpiry}
                           onChange={handleExpiryChange}
                           required
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="cardCvc">CVC</Label>
+                        <Label htmlFor="cardCvc">CVV</Label>
                         <Input 
                           id="cardCvc" 
                           placeholder="123"
@@ -217,7 +217,7 @@ const Checkout = () => {
                     
                     <Alert>
                       <AlertDescription>
-                        This is a demo checkout. No actual payment will be processed.
+                        Este é um checkout de demonstração. Nenhum pagamento real será processado.
                       </AlertDescription>
                     </Alert>
                     
@@ -226,7 +226,7 @@ const Checkout = () => {
                       className="w-full bg-teal-600 hover:bg-teal-700"
                       disabled={isProcessing}
                     >
-                      {isProcessing ? "Processing..." : `Pay ${selectedProgram.price}`}
+                      {isProcessing ? "Processando..." : `Pagar ${selectedProgram.price}`}
                     </Button>
                   </form>
                 </CardContent>
@@ -236,7 +236,7 @@ const Checkout = () => {
             <div className="md:col-span-1">
               <Card>
                 <CardHeader>
-                  <CardTitle>Order Summary</CardTitle>
+                  <CardTitle>Resumo do Pedido</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
@@ -246,7 +246,7 @@ const Checkout = () => {
                     </div>
                     
                     <div className="flex justify-between text-sm text-gray-500">
-                      <span>Period</span>
+                      <span>Período</span>
                       <span>{selectedProgram.period}</span>
                     </div>
                     
@@ -260,7 +260,7 @@ const Checkout = () => {
                 </CardContent>
                 <CardFooter className="flex flex-col">
                   <div className="text-sm text-gray-500 mb-4">
-                    <h4 className="font-semibold mb-2">What's included:</h4>
+                    <h4 className="font-semibold mb-2">O que está incluído:</h4>
                     <ul className="space-y-2">
                       {selectedProgram.features.map((feature) => (
                         <li key={feature} className="flex items-start">

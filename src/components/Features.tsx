@@ -6,33 +6,33 @@ const Features = () => {
   const features = [
     {
       icon: <Search className="h-8 w-8 text-teal-500" />,
-      title: "Personalized Assessment",
-      description: "We analyze your body type, lifestyle, and goals to create a plan uniquely tailored to you."
+      title: "Avaliação Personalizada",
+      description: "Analisamos seu modelo de negócio, desafios e oportunidades para criar um plano único para sua empresa."
     },
     {
       icon: <Calendar className="h-8 w-8 text-teal-500" />,
-      title: "Flexible Meal Planning",
-      description: "Enjoy delicious, satisfying meals that fit your preferences and dietary requirements."
+      title: "Imersão de 2 Dias",
+      description: "Experiência intensiva e prática que transforma a maneira como você enxerga a aplicação da IA nos negócios."
     },
     {
       icon: <Activity className="h-8 w-8 text-teal-500" />,
-      title: "Sustainable Exercise",
-      description: "Exercise routines designed to fit into your schedule and match your fitness level."
+      title: "Implementação Sustentável",
+      description: "Estratégias para implementar IA de forma gradual e eficaz, respeitando a cultura da sua organização."
     },
     {
       icon: <User className="h-8 w-8 text-teal-500" />,
-      title: "Expert Coaching",
-      description: "Get guidance from certified nutritionists and fitness professionals every step of the way."
+      title: "Especialistas em IA",
+      description: "Aprenda com profissionais que já implementaram soluções de IA em empresas líderes do mercado."
     },
     {
       icon: <Heart className="h-8 w-8 text-teal-500" />,
-      title: "Supportive Community",
-      description: "Connect with others on the same journey for motivation, tips, and accountability."
+      title: "Comunidade de Líderes",
+      description: "Conecte-se com outros executivos enfrentando desafios similares para troca de experiências e networking."
     },
     {
       icon: <Scale className="h-8 w-8 text-teal-500" />,
-      title: "Progress Tracking",
-      description: "Easily track your results and see your transformation with our intuitive tools."
+      title: "Resultados Mensuráveis",
+      description: "Acompanhamento de KPIs e métricas para avaliar o impacto da implementação de IA no seu negócio."
     }
   ];
 
@@ -40,9 +40,9 @@ const Features = () => {
     <section id="about" className="py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">The TransformU Difference</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">O Diferencial da Nossa Imersão</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Our holistic approach addresses all aspects of weight loss for lasting results.
+            Nossa abordagem holística aborda todos os aspectos da transformação digital através da IA.
           </p>
         </div>
         

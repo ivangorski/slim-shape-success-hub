@@ -12,46 +12,46 @@ const ProgramCards = () => {
   
   const programs = [
     {
-      id: "essential",
-      title: "Essential Plan",
-      price: "$49",
-      period: "per month",
-      description: "Perfect for beginners who want to start their weight loss journey",
+      id: "essencial",
+      title: "Plano Básico",
+      price: "R$1.990",
+      period: "por pessoa",
+      description: "Perfeito para profissionais que querem iniciar sua jornada na IA",
       features: [
-        "Personalized meal plan",
-        "Weekly check-ins",
-        "Access to recipe library",
-        "Basic workout guides"
+        "Material didático digital",
+        "Certificado de participação",
+        "Acesso à biblioteca de recursos",
+        "1 dia de curso imersivo"
       ],
       popular: false,
     },
     {
       id: "premium",
-      title: "Premium Plan",
-      price: "$99",
-      period: "per month",
-      description: "Our most popular program for committed individuals",
+      title: "Plano Premium",
+      price: "R$3.990",
+      period: "por pessoa",
+      description: "Nosso programa mais popular para líderes comprometidos",
       features: [
-        "Everything in Essential Plan",
-        "1-on-1 nutrition coaching",
-        "Custom workout routines",
-        "Priority support",
-        "Progress tracking tools"
+        "Tudo do Plano Básico",
+        "Mentoria individual pós-curso",
+        "Casos de uso específicos para seu negócio",
+        "Suporte prioritário",
+        "Acesso a ferramentas exclusivas de IA"
       ],
       popular: true,
     },
     {
-      id: "ultimate",
-      title: "Ultimate Plan",
-      price: "$199",
-      period: "per month",
-      description: "Complete transformation with maximum support",
+      id: "corporativo",
+      title: "Plano Corporativo",
+      price: "R$9.990",
+      period: "até 5 pessoas",
+      description: "Transformação completa para sua equipe executiva",
       features: [
-        "Everything in Premium Plan",
-        "Daily coach check-ins",
-        "Personalized supplement advice",
-        "Stress management techniques",
-        "Lifetime access to resources"
+        "Tudo do Plano Premium",
+        "Consultoria estratégica personalizada",
+        "Workshop exclusivo para sua empresa",
+        "Implementação de projeto piloto",
+        "Acesso vitalício a atualizações de conteúdo"
       ],
       popular: false,
     }
@@ -66,9 +66,9 @@ const ProgramCards = () => {
     <section id="programs" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Choose Your Transformation Path</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Escolha Seu Caminho de Transformação</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Select the program that best fits your lifestyle, goals, and budget. All plans come with our 30-day satisfaction guarantee.
+            Selecione o programa que melhor se adapta às necessidades da sua empresa. Todos os planos incluem nossa garantia de satisfação.
           </p>
         </div>
         
@@ -81,7 +81,7 @@ const ProgramCards = () => {
               {program.popular && (
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                   <span className="bg-teal-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                    Most Popular
+                    Mais Popular
                   </span>
                 </div>
               )}
@@ -116,7 +116,7 @@ const ProgramCards = () => {
                   }`}
                   onClick={() => handleProgramSelect(program)}
                 >
-                  Get Started Now
+                  Inscreva-se Agora
                 </Button>
               </CardFooter>
             </Card>

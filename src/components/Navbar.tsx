@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, LogOut, LogIn, UserCircle } from "lucide-react";
+import { Menu, X, LogOut, LogIn } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import {
@@ -33,22 +33,22 @@ const Navbar = () => {
     <nav className="bg-white/80 backdrop-blur-md shadow-sm py-4 sticky top-0 z-50">
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
-          <span className="font-bold text-xl md:text-2xl gradient-text">TransformU</span>
+          <span className="font-bold text-xl md:text-2xl gradient-text">ImersivaIA</span>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
           <Link to="/" className="text-gray-600 hover:text-teal-600 transition-colors font-medium">
-            Home
+            Início
           </Link>
           <a href="#programs" className="text-gray-600 hover:text-teal-600 transition-colors font-medium">
-            Programs
+            Programas
           </a>
           <a href="#testimonials" className="text-gray-600 hover:text-teal-600 transition-colors font-medium">
-            Success Stories
+            Depoimentos
           </a>
           <a href="#about" className="text-gray-600 hover:text-teal-600 transition-colors font-medium">
-            About Us
+            Sobre Nós
           </a>
           
           {user ? (
@@ -77,14 +77,14 @@ const Navbar = () => {
                   onClick={() => signOut()}
                 >
                   <LogOut className="mr-2 h-4 w-4" />
-                  <span>Log out</span>
+                  <span>Sair</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
             <Button asChild size="sm" className="bg-teal-600 hover:bg-teal-700">
               <Link to="/auth">
-                Start Your Journey
+                Iniciar Sua Jornada
               </Link>
             </Button>
           )}
@@ -112,28 +112,28 @@ const Navbar = () => {
               className="text-gray-600 hover:text-teal-600 transition-colors font-medium px-4 py-2 rounded-md"
               onClick={() => setIsOpen(false)}
             >
-              Home
+              Início
             </Link>
             <a 
               href="#programs" 
               className="text-gray-600 hover:text-teal-600 transition-colors font-medium px-4 py-2 rounded-md"
               onClick={() => setIsOpen(false)}
             >
-              Programs
+              Programas
             </a>
             <a 
               href="#testimonials" 
               className="text-gray-600 hover:text-teal-600 transition-colors font-medium px-4 py-2 rounded-md"
               onClick={() => setIsOpen(false)}
             >
-              Success Stories
+              Depoimentos
             </a>
             <a 
               href="#about" 
               className="text-gray-600 hover:text-teal-600 transition-colors font-medium px-4 py-2 rounded-md"
               onClick={() => setIsOpen(false)}
             >
-              About Us
+              Sobre Nós
             </a>
             
             {user ? (
@@ -159,7 +159,7 @@ const Navbar = () => {
                   }}
                 >
                   <LogOut className="mr-2 h-4 w-4" />
-                  <span>Log out</span>
+                  <span>Sair</span>
                 </Button>
               </div>
             ) : (
@@ -171,7 +171,7 @@ const Navbar = () => {
                 >
                   <Link to="/auth">
                     <LogIn className="mr-2 h-4 w-4" />
-                    <span>Sign In / Sign Up</span>
+                    <span>Entrar / Cadastrar</span>
                   </Link>
                 </Button>
               </div>
